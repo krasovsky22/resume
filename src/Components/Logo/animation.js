@@ -10,22 +10,25 @@ function delay(t) {
 
 const animation = async () => {
   const animateCircles = async () => {
+    const bigCircleSelector = '.ml8 .circle-big';
+    const smallCircleSelector = '.ml8 .circle-small';
+
     anime
       .timeline({ loop: false })
       .add({
-        targets: '.ml8 .circle-white',
+        targets: bigCircleSelector,
         scale: [0, 2],
         opacity: [1, 0.5],
         easing: 'easeInOutExpo',
-        rotateZ: 180,
+        rotateZ: 60,
         duration: 1000
       })
       .add({
-        targets: '.ml8 .circle-white',
+        targets: bigCircleSelector,
         scale: [2, 1],
         opacity: [0.5, 1],
         easing: 'easeInOutExpo',
-        rotateZ: 360,
+        rotateZ: 120,
         duration: 1000
       })
       .add({
@@ -45,7 +48,7 @@ const animation = async () => {
     await delay(2000);
 
     anime({
-      targets: '.ml8 .circle-white',
+      targets: bigCircleSelector,
       rotateZ: 0,
       duration: 8000,
       easing: 'linear',
@@ -53,8 +56,8 @@ const animation = async () => {
     });
 
     anime({
-      targets: '.ml8 .circle-dark-dashed',
-      rotateZ: 360,
+      targets: smallCircleSelector,
+      rotateZ: 60,
       duration: 8000,
       easing: 'linear',
       loop: true

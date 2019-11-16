@@ -3,14 +3,20 @@ import React from 'react';
 import './Home.scss';
 import Logo from '@/Components/Logo';
 
+import '@/Fonts/ArchivoNarrow-Bold.ttf';
+
 function Home() {
   return (
-    <div className="main-text-zone">
-      <h1>
-        Hi, <br /> I'm Vlad, <br /> web developer.
-      </h1>
-      <Logo animated={true} />
-    </div>
+    <>
+      <div className="main-text-zone">
+        <h1>
+          Hi, <br /> I'm Vlad, <br /> web developer.
+        </h1>
+      </div>
+      <div className="main-logo">
+        <Logo animated={true} />
+      </div>
+    </>
   );
 }
 

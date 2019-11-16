@@ -11,7 +11,8 @@ function resolveSrc(_path) {
 
 const aliases = {
   '@': 'src',
-  '@components': 'src/components',
+  '@components': 'src/Components',
+  '@fonts': 'src/Fonts'
 };
 
 module.exports = {
@@ -32,14 +33,14 @@ for (const alias in aliases) {
   module.exports.jsconfig[alias] = aliasTo.includes('/index.')
     ? [aliasTo]
     : [
-      `${aliasTo}/index.js`,
-      `${aliasTo}/index.jsx`,
-      `${aliasTo}/index.json`,
-      `${aliasTo}/index.ts`,
-      `${aliasTo}/index.tsx`,
-      `${aliasTo}/index.scss`,
-      `${aliasTo}/index.css`
-    ];
+        `${aliasTo}/index.js`,
+        `${aliasTo}/index.jsx`,
+        `${aliasTo}/index.json`,
+        `${aliasTo}/index.ts`,
+        `${aliasTo}/index.tsx`,
+        `${aliasTo}/index.scss`,
+        `${aliasTo}/index.css`
+      ];
 }
 
 const prettierFormat = obj =>

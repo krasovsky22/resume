@@ -30,9 +30,9 @@ class Logo extends PureComponent {
             <LogoSvg />
           </span>
         </span>
-        <span className="circle circle-white"></span>
+        <span className="circle circle-big"></span>
         <span className="circle circle-container">
-          <span className="circle circle-dark-dashed"></span>
+          <span className="circle circle-small"></span>
         </span>
       </div>
     );

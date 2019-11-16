@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
+      "@/*": ["src/*"],
       "@": [
         "src/index.js",
         "src/index.jsx",
@@ -14,9 +12,7 @@
         "src/index.scss",
         "src/index.css"
       ],
-      "@components/*": [
-        "src/components/*"
-      ],
+      "@components/*": ["src/components/*"],
       "@components": [
         "src/components/index.js",
         "src/components/index.jsx",
