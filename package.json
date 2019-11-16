@@ -52,14 +52,20 @@
     ]
   },
   "devDependencies": {
-    "react-app-rewired": "^2.1.5",
+    "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
-    "husky": "^3.0.9"
+    "pretty-quick": "^2.0.1",
+    "react-app-rewired": "^2.1.5"
   },
   "prettier": {
     "trailingComma": "none",
     "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
