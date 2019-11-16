@@ -1,0 +1,57 @@
+ml8 {
+  font-weight: 900;
+  font-size: 4.5em;
+  color: #fff;
+  position: relative;
+  width: 100%;
+}
+
+.ml8 .logo-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  height: 1em;
+}
+
+.ml8 .logo {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 0.7em;
+  top: -0.2em;
+}
+
+.ml8 .circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+
+.ml8 .circle-white {
+  width: 3em;
+  height: 3em;
+  border: 10px dashed white;
+  border-radius: 2em;
+}
+
+.ml8 .circle-dark {
+  width: 2.2em;
+  height: 2.2em;
+  background-color: #4f7b86;
+  border-radius: 3em;
+  z-index: 1;
+}
+
+.ml8 .circle-dark-dashed {
+  border-radius: 2.4em;
+  background-color: transparent;
+  border: 6px dashed #66864f;
+  width: 2.3em;
+  height: 2.3em;
+}
