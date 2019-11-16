@@ -1,3 +1,12 @@
+/* latin */
+@font-face {
+  font-family: 'La Belle Aurore';
+  font-style: normal;
+  font-weight: 400;
+  src: local('La Belle Aurore'), local('LaBelleAurore'), url(https://fonts.gstatic.com/s/labelleaurore/v10/RrQIbot8-mNYKnGNDkWlocovHeI4HO2E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +14,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1d1d1d;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#page {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-nav{
+  min-height: 500px;
+}
+
+$tags-margin: 5%;
+.tags {
+  color: #515152;
+  position: absolute;
+  left: 100px;
+  font-size: 18px;
+  font-family: 'La Belle Aurore',cursive;
+}
+
+.top-tags{
+  top: $tags-margin
+}
+
+.bottom-tags{
+  bottom: $tags-margin
 }

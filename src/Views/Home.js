@@ -1,33 +1,13 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavItem, NavLink } from "reactstrap";
 
-function App() {
+import './Home.scss'
+
+function Home() {
   return (
-    <div className='d-flex'>
-      <Navbar style={{ marginTop: '45%' }}>
-        <Nav vertical={true}>
-          <NavItem>
-            <NavLink href='#'>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='#'>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='#'>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='#'>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href='#'>Home</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
-      <Container>
-        Hello World
-      </Container>
+    <div className='main-text-zone'>
+      <h1>Hi, <br /> I'm Vlad, <br /> web developer.</h1>
     </div>
   );
 }
 
-export default App;
+export default Home;

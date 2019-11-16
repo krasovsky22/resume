@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@": [
+        "src/index.js",
+        "src/index.jsx",
+        "src/index.json",
+        "src/index.ts",
+        "src/index.tsx",
+        "src/index.scss",
+        "src/index.css"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@components": [
+        "src/components/index.js",
+        "src/components/index.jsx",
+        "src/components/index.json",
+        "src/components/index.ts",
+        "src/components/index.tsx",
+        "src/components/index.scss",
+        "src/components/index.css"
+      ]
+    }
+  }
+}

@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Nav, Navbar, NavItem, NavLink } from "reactstrap";
+import Home from "@/Views/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='d-flex'>
+      <Navbar className='sidebar-nav'>
+        <Nav vertical={true}>
+          <NavItem>
+            <NavLink href='#'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='#'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='#'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='#'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href='#'>Home</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+      <Container>
+        <div className='tags top-tags'>{'<html>'}</div>
+        <div className='tags top-tags mt-5 ml-5'>{'<body>'}</div>
+        <Home/>
+        <div className='tags bottom-tags mb-5 ml-5'>{'</body>'}</div>
+        <div className='tags bottom-tags'>{'</html>'}</div>
+      </Container>
     </div>
   );
 }
