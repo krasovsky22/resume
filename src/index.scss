@@ -56,6 +56,7 @@ $tags-margin: 5%;
   $sidebarSize: 60px;
 
   .sidebar {
+    background: #181818;
     position: fixed;
     z-index: 1000;
     display: block;
@@ -63,18 +64,29 @@ $tags-margin: 5%;
     overflow-y: auto;
     width: $sidebarSize;
     height: 100%;
+
+    .navbar {
+      padding: 0;
+      display: block;
+      top: 42%;
+      text-align: center;
+    }
   }
 
   .tags {
     color: #515152;
     position: fixed;
-    left: $sidebarSize;
+    left: $sidebarSize + 20;
     font-size: 18px;
     font-family: 'La Belle Aurore', cursive;
   }
 
   .main-container {
     margin-left: $sidebarSize;
+  }
+
+  .navbar {
+    padding: 0;
   }
 }
 

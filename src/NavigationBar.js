@@ -9,19 +9,19 @@ class NavigationBar extends Component {
         <Navbar className="">
           <Nav vertical={true}>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">H</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">H</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">H</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">H</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">Home</NavLink>
+              <NavLink href="#">H</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
