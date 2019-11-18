@@ -3,14 +3,24 @@
   font-family: 'La Belle Aurore';
   font-style: normal;
   font-weight: 400;
-  src: local('La Belle Aurore'), local('LaBelleAurore'), url(https://fonts.gstatic.com/s/labelleaurore/v10/RrQIbot8-mNYKnGNDkWlocovHeI4HO2E.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local('La Belle Aurore'), local('LaBelleAurore'),
+    url(https://fonts.gstatic.com/s/labelleaurore/v10/RrQIbot8-mNYKnGNDkWlocovHeI4HO2E.woff2)
+      format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
+html {
+  min-height: 100%;
+  height: 100%;
+}
 body {
+  min-height: 100%;
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,7 +29,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -28,23 +38,52 @@ code {
   height: 100%;
 }
 
-.sidebar-nav{
-  min-height: 500px;
-}
+// .sidebar-nav{
+//   min-height: 500px;
+// }
 
 $tags-margin: 5%;
-.tags {
-  color: #515152;
-  position: absolute;
-  left: 100px;
-  font-size: 18px;
-  font-family: 'La Belle Aurore',cursive;
+
+.top-tags {
+  top: $tags-margin;
 }
 
-.top-tags{
-  top: $tags-margin
+.bottom-tags {
+  bottom: $tags-margin;
 }
 
-.bottom-tags{
-  bottom: $tags-margin
+@media (min-width: 768px) {
+  $sidebarSize: 180px;
+
+  .sidebar {
+    position: fixed;
+    top: 40%;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: $sidebarSize;
+  }
+
+  .tags {
+    color: #515152;
+    position: fixed;
+    left: $sidebarSize;
+    font-size: 18px;
+    font-family: 'La Belle Aurore', cursive;
+  }
+
+  .main-container {
+    margin-left: $sidebarSize;
+  }
+}
+
+.pt-40 {
+  padding-top: 40vh;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
 }

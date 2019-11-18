@@ -8,7 +8,7 @@ import '@/Fonts/ArchivoNarrow-Bold.ttf';
 function Home() {
   return (
     <>
-      <div className="main-text-zone">
+      <div className="main-text-zone pt-40">
         <h1>
           Hi, <br /> I'm Vlad, <br /> web developer.
         </h1>
