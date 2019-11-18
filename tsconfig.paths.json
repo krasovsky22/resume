@@ -12,15 +12,15 @@
         "src/index.scss",
         "src/index.css"
       ],
-      "@components/*": ["src/Components/*"],
-      "@components": [
-        "src/Components/index.js",
-        "src/Components/index.jsx",
-        "src/Components/index.json",
-        "src/Components/index.ts",
-        "src/Components/index.tsx",
-        "src/Components/index.scss",
-        "src/Components/index.css"
+      "@utils/*": ["src/Utils/*"],
+      "@utils": [
+        "src/Utils/index.js",
+        "src/Utils/index.jsx",
+        "src/Utils/index.json",
+        "src/Utils/index.ts",
+        "src/Utils/index.tsx",
+        "src/Utils/index.scss",
+        "src/Utils/index.css"
       ],
       "@fonts/*": ["src/Fonts/*"],
       "@fonts": [
@@ -31,6 +31,16 @@
         "src/Fonts/index.tsx",
         "src/Fonts/index.scss",
         "src/Fonts/index.css"
+      ],
+      "@components/*": ["src/Components/*"],
+      "@components": [
+        "src/Components/index.js",
+        "src/Components/index.jsx",
+        "src/Components/index.json",
+        "src/Components/index.ts",
+        "src/Components/index.tsx",
+        "src/Components/index.scss",
+        "src/Components/index.css"
       ]
     }
   }

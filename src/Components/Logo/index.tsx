@@ -1,26 +1,25 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import animation from './animation';
 import './Logo.scss';
 import { ReactComponent as LogoSvg } from './Logo.svg';
 
-class Logo extends PureComponent {
-  static propTypes = {
-    animated: PropTypes.bool
-  };
+type LogoProps = typeof Logo.defaultProps & {
+  isAnimated: boolean;
+};
 
+class Logo extends React.PureComponent<LogoProps> {
   static defaultProps = {
-    animated: true
+    isAnimated: false
   };
 
-  componentDidMount = () => {
-    const { animated } = this.props;
+  componentDidMount(): void {
+    const { isAnimated } = this.props;
 
-    if (animated) {
+    if (isAnimated) {
       animation();
     }
-  };
+  }
 
   render() {
     return (

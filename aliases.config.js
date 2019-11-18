@@ -11,8 +11,9 @@ function resolveSrc(_path) {
 
 const aliases = {
   '@': 'src',
-  '@components': 'src/Components',
-  '@fonts': 'src/Fonts'
+  '@utils': 'src/Utils',
+  '@fonts': 'src/Fonts',
+  '@components': 'src/Components'
 };
 
 module.exports = {
