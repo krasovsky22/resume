@@ -53,17 +53,16 @@ $tags-margin: 5%;
 }
 
 @media (min-width: 768px) {
-  $sidebarSize: 180px;
+  $sidebarSize: 60px;
 
   .sidebar {
     position: fixed;
-    top: 40%;
     z-index: 1000;
     display: block;
-    padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
     width: $sidebarSize;
+    height: 100%;
   }
 
   .tags {
