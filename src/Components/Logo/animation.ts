@@ -1,6 +1,6 @@
 import anime from 'animejs';
 
-const animation = async (): Promise<void> => {
+export async function animateLogo(): Promise<void> {
   /** circles animation */
   const animateCircles = async (): Promise<void> => {
     const bigCircleSelector: string = '.ml8 .circle-big';
@@ -55,40 +55,26 @@ const animation = async (): Promise<void> => {
   };
 
   /** logo animation */
-  const animateMainLogo = (): void => {
-    const logoElement = document.querySelector<HTMLElement>('#logo path');
+  const animateMainLogo = async (): Promise<void> => {
+    const logoElement = document.querySelector<HTMLElement>('.empty-logo path');
 
     if (logoElement) {
-      anime
-        .timeline({ loop: false })
-        .add({
-          targets: logoElement,
-          strokeDashoffset: [anime.setDashoffset, 0],
-          easing: 'easeInOutSine',
-          opacity: [0, 1],
-          duration: 2000,
-          begin: function(anim): void {
-            logoElement.setAttribute('stroke', 'white');
-          },
-          complete: function(anim): void {
-            logoElement.setAttribute('fill', 'url(#logo-gradient-fill)');
-            logoElement.setAttribute('stroke', 'black');
-          }
-        })
-        .add({
-          targets: logoElement,
-          duration: 1000,
-          easing: 'linear',
-          complete: function(anim): void {
-            logoElement.setAttribute('fill', 'url(#logo-gradient-fill)');
-            logoElement.setAttribute('stroke', 'black');
-          }
-        });
+      await anime.timeline({ loop: false }).add({
+        targets: logoElement,
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        opacity: [0, 1],
+        duration: 2000,
+        begin: function(anim): void {
+          logoElement.setAttribute('stroke', 'white');
+        },
+        complete: function(anim): void {
+          logoElement.setAttribute('stroke', 'black');
+        }
+      }).finished;
     }
   };
 
   await animateCircles();
-  animateMainLogo();
-};
-
-export default animation;
+  await animateMainLogo();
+}

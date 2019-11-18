@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from '@/Components/Logo';
+import Logo from '@/Components/Logo/AnimatedLogo';
 
 import './Home.scss';
 import '@/Fonts/ArchivoNarrow-Bold.ttf';
