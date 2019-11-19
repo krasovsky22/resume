@@ -1,26 +1,48 @@
 import React from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'reactstrap';
-import useHover from '@/Hooks/useHover';
 
 type NavigationElementProps = {
   title: string;
-  isActive: boolean;
-  className: string;
   children: React.ReactNode;
 };
 
-const NavigationElement = (props: NavigationElementProps) => {
-  const { className, isActive, children, title } = props;
-  const Element = (isHovered: boolean) => (
-    <NavLink href="/" className={classNames(className, { active: isActive })}>
-      {isHovered ? <p>{title}</p> : children}
-    </NavLink>
-  );
-
-  const [hoverable, hovered] = useHover(Element);
-
-  return <div>{hoverable}</div>;
+type NavigationElementState = {
+  isHovered: boolean;
 };
+
+class NavigationElement extends React.PureComponent<
+  NavigationElementProps,
+  NavigationElementState
+> {
+  state = {
+    isHovered: false
+  };
+
+  onMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
+    console.log('enter');
+    this.setState({ isHovered: true });
+  };
+
+  onMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
+    console.log('leave');
+    this.setState({ isHovered: false });
+  };
+
+  render() {
+    const { title, children } = this.props;
+    const { isHovered } = this.state;
+
+    return (
+      <div
+        className="navigation-element"
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+      >
+        {isHovered ? <p className="title-text">{title}</p> : children}
+      </div>
+    );
+  }
+}
 
 export default NavigationElement;

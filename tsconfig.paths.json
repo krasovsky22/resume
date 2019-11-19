@@ -13,7 +13,6 @@
         "src/index.css"
       ],
       "@utils/*": ["src/Utils/*"],
-      "@hooks/*": ["src/Hooks/*"],
       "@utils": [
         "src/Utils/index.js",
         "src/Utils/index.jsx",
@@ -32,6 +31,16 @@
         "src/Fonts/index.tsx",
         "src/Fonts/index.scss",
         "src/Fonts/index.css"
+      ],
+      "@hooks/*": ["src/Hooks/*"],
+      "@hooks": [
+        "src/Hooks/index.js",
+        "src/Hooks/index.jsx",
+        "src/Hooks/index.json",
+        "src/Hooks/index.ts",
+        "src/Hooks/index.tsx",
+        "src/Hooks/index.scss",
+        "src/Hooks/index.css"
       ],
       "@components/*": ["src/Components/*"],
       "@components": [

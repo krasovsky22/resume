@@ -23,23 +23,31 @@ const NavigationBar: React.FC = () => (
     <Navbar>
       <Nav vertical={true}>
         <NavItem>
-          <NavigationElement className="home-link" isActive={true} title="Home">
-            <FontAwesomeIcon icon={faHome} />
-          </NavigationElement>
+          <NavLink href="/" className="home-link">
+            <NavigationElement title={'Home'}>
+              <FontAwesomeIcon icon={faHome} />
+            </NavigationElement>
+          </NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="#" className="about-link">
-            <FontAwesomeIcon icon={faGrinAlt} />
+            <NavigationElement title={'About'}>
+              <FontAwesomeIcon icon={faGrinAlt} />
+            </NavigationElement>
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="#" className="skills-link">
-            <FontAwesomeIcon icon={faCode} />
+            <NavigationElement title={'Skills'}>
+              <FontAwesomeIcon icon={faCode} />
+            </NavigationElement>
           </NavLink>
         </NavItem>
         <NavItem>
           <EmailTo>
-            <FontAwesomeIcon icon={faEnvelope} />
+            <NavigationElement title={'Contact'}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </NavigationElement>
           </EmailTo>
         </NavItem>
       </Nav>
