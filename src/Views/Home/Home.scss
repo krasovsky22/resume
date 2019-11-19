@@ -1,10 +1,29 @@
 .main-text-zone {
   margin-left: 10%;
-  margin-top: 35%;
+  margin-top: 25%;
 
   h1 {
     font-size: 5.5vh;
     font-weight: 400;
+  }
+
+  h2 {
+    color: #8d8d8d;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    -webkit-animation: myanim2 1s 1.8s backwards;
+    animation: myanim2 1s 1.8s backwards;
+  }
+
+  .contact-me-button {
+    background-color: transparent;
+
+    &:hover {
+      background-color: #ffb84d;
+    }
   }
 }
 

@@ -13,6 +13,7 @@
         "src/index.css"
       ],
       "@utils/*": ["src/Utils/*"],
+      "@hooks/*": ["src/Hooks/*"],
       "@utils": [
         "src/Utils/index.js",
         "src/Utils/index.jsx",

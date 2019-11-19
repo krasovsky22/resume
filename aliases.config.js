@@ -13,6 +13,7 @@ const aliases = {
   '@': 'src',
   '@utils': 'src/Utils',
   '@fonts': 'src/Fonts',
+  '@hooks': 'src/Hooks',
   '@components': 'src/Components'
 };
 

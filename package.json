@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
     "node-sass": "^4.13.0",
