@@ -36,7 +36,7 @@
 
   h1 {
     font-size: 5.5vh;
-    font-weight: 400;
+    font-weight: 700;
 
     span {
       animation-duration: 1s;
@@ -48,6 +48,8 @@
       color: $logoMainColor;
       cursor: default;
       animation-name: rubberBand;
+      display: inline-block;
+      animation-iteration-count: 1;
     }
   }
 
