@@ -1,6 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
-import { NavLink } from 'reactstrap';
 
 type NavigationElementProps = {
   title: string;
