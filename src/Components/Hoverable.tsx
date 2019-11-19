@@ -1,34 +1,28 @@
 import React from 'react';
 
-type NavigationElementProps = {
-  title: string;
-  children: React.ReactNode;
+type HoverableProps = {
+  children: React.FC<boolean>;
 };
 
-type NavigationElementState = {
+type HoverableState = {
   isHovered: boolean;
 };
 
-class NavigationElement extends React.PureComponent<
-  NavigationElementProps,
-  NavigationElementState
-> {
+class Hoverable extends React.PureComponent<HoverableProps, HoverableState> {
   state = {
     isHovered: false
   };
 
   onMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
-    console.log('enter');
     this.setState({ isHovered: true });
   };
 
   onMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
-    console.log('leave');
     this.setState({ isHovered: false });
   };
 
   render() {
-    const { title, children } = this.props;
+    const { children } = this.props;
     const { isHovered } = this.state;
 
     return (
@@ -37,10 +31,10 @@ class NavigationElement extends React.PureComponent<
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
       >
-        {isHovered ? <p className="title-text">{title}</p> : children}
+        {children(isHovered)}
       </div>
     );
   }
 }
 
-export default NavigationElement;
+export default Hoverable;
