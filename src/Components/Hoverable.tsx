@@ -26,11 +26,7 @@ class Hoverable extends React.PureComponent<HoverableProps, HoverableState> {
     const { isHovered } = this.state;
 
     return (
-      <div
-        className="navigation-element"
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-      >
+      <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         {children(isHovered)}
       </div>
     );

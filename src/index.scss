@@ -1,3 +1,5 @@
+@import 'parameters.scss';
+
 /* latin */
 @font-face {
   font-family: 'La Belle Aurore';
@@ -80,12 +82,12 @@ $tags-margin: 5%;
           font-weight: bold;
           font-size: 75%;
           text-align: center;
-          color: #ffb84d;
+          color: $logoMainColor;
         }
       }
 
       a.active {
-        color: #ffb84d;
+        color: $logoMainColor;
       }
 
       .nav-link {

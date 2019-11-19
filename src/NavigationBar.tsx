@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav, Navbar, NavItem, NavLink } from 'reactstrap';
-import LogoIcon from '@/Components/Logo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,8 +8,10 @@ import {
   faGrinAlt,
   faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
-import EmailTo from '@/Components/Links/EmailTo';
+
+import LogoIcon from '@/Components/Logo';
 import Hoverable from '@/Components/Hoverable';
+import EmailTo from '@/Components/Links/EmailTo';
 
 const NavigationBar: React.FC = () => (
   <div className="sidebar">
