@@ -42,6 +42,16 @@
         "src/Hooks/index.scss",
         "src/Hooks/index.css"
       ],
+      "@router/*": ["src/Router/*"],
+      "@router": [
+        "src/Router/index.js",
+        "src/Router/index.jsx",
+        "src/Router/index.json",
+        "src/Router/index.ts",
+        "src/Router/index.tsx",
+        "src/Router/index.scss",
+        "src/Router/index.css"
+      ],
       "@components/*": ["src/Components/*"],
       "@components": [
         "src/Components/index.js",

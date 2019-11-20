@@ -14,6 +14,7 @@ const aliases = {
   '@utils': 'src/Utils',
   '@fonts': 'src/Fonts',
   '@hooks': 'src/Hooks',
+  '@router': 'src/Router',
   '@components': 'src/Components'
 };
 
