@@ -1,3 +1,4 @@
+import { delay } from './../../Utils/delay';
 import anime from 'animejs';
 
 export async function animateLogo(): Promise<void> {
@@ -6,13 +7,15 @@ export async function animateLogo(): Promise<void> {
     const bigCircleSelector: string = '.ml8 .circle-big';
     const smallCircleSelector: string = '.ml8 .circle-small';
 
+    await delay(4000);
+
     // main circle to zoom in
     await anime
       .timeline({ loop: false })
       .add({
         targets: bigCircleSelector,
         scale: [0, 2],
-        opacity: [1, 0.5],
+        opacity: [0, 0.5],
         easing: 'easeInOutExpo',
         rotateZ: 60,
         duration: 1000
@@ -30,6 +33,7 @@ export async function animateLogo(): Promise<void> {
       .add({
         targets: smallCircleSelector,
         scale: [0, 1],
+        opacity: [0, 1],
         duration: 600,
         easing: 'easeInOutExpo',
         offset: '-=1000'
