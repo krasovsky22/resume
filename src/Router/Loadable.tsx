@@ -1,16 +1,27 @@
-import React, { ReactNode } from 'react';
-
-import { RouteComponentProps } from 'react-router';
 import NavigationBar from '@/NavigationBar';
-import { Col, Container } from 'reactstrap';
 import { delay } from '@/Utils/delay';
+import React, { ReactNode, useEffect, useState } from 'react';
+import { RouteComponentProps } from 'react-router';
+import { Col, Container } from 'reactstrap';
 
 type LoadableType = {
   children: ReactNode;
 };
 
+const DELAY = 3000;
+
 const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
   const { children, ...rest } = props;
+
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    delay(DELAY).then(() => setShow(true));
+  }, []);
+
+  if (!show) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <>
       <NavigationBar {...rest} />

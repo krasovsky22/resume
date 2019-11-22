@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { RouteProps, RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router';
 import { Nav, Navbar, NavItem, NavLink } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -13,14 +13,6 @@ import {
 import LogoIcon from '@/Components/Logo';
 import Hoverable from '@/Components/Hoverable';
 import EmailTo from '@/Components/Links/EmailTo';
-
-// type PathType = {
-//   path: string;
-// };
-
-// type NavigationBarProps = {
-//   match: PathType;
-// };
 
 class NavigationBar extends React.PureComponent<RouteComponentProps> {
   render() {
