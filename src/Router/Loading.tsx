@@ -1,7 +1,6 @@
 import LogoIcon from '@/Components/Logo';
 import React from 'react';
 import { Progress } from 'reactstrap';
-import { number } from 'prop-types';
 
 type LoadingProps = {
   loadingTime: number;
@@ -20,9 +19,9 @@ class Loading extends React.PureComponent<LoadingProps, LoadingState> {
 
   componentDidMount() {
     let initialValue = 0;
-    const tick = this.props.loadingTime / 100;
+    const tick = (10 * this.props.loadingTime) / 100;
     this.timerId = window.setInterval(() => {
-      initialValue++;
+      initialValue += 10;
       this.setState({ loadingValue: initialValue });
     }, tick);
   }
@@ -38,13 +37,14 @@ class Loading extends React.PureComponent<LoadingProps, LoadingState> {
         <LogoIcon width="15%" />
         <br />
         <span>Site is loading...</span>
-        <Progress
-          bar
-          animated
-          value={loadingValue}
-          max={100}
-          className="progress-bar"
-        />
+        <div>
+          <Progress
+            bar
+            value={loadingValue}
+            max={100}
+            className="progress-bar"
+          />
+        </div>
       </div>
     );
   }

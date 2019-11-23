@@ -9,14 +9,15 @@ type LoadableType = {
   children: ReactNode;
 };
 
-const DELAY = 1000;
+const DELAY = parseInt(process.env.REACT_APP_LOADING_SCREEN_TIMEOUT || '1000');
+//const DELAY = 100000;
 
 const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
   const { children, ...rest } = props;
 
   const [show, setShow] = useState(false);
   useEffect(() => {
-    delay(DELAY).then(() => setShow(true));
+    delay(DELAY + 500).then(() => setShow(true));
   }, []);
 
   if (!show) {
