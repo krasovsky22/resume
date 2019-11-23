@@ -140,3 +140,26 @@ $tags-margin: 5%;
     text-decoration: inherit;
   }
 }
+
+.loading-container {
+  position: absolute;
+  min-width: 300px;
+  width: 20%;
+  text-align: center;
+  top: 35%;
+  left: 40%;
+
+  span {
+    color: #8d8d8d;
+    margin-top: 9px;
+    font-size: 9px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    display: block;
+  }
+
+  .progress-bar {
+    height: 1px;
+  }
+}

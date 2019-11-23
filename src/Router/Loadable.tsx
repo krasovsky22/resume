@@ -3,12 +3,13 @@ import { delay } from '@/Utils/delay';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { Col, Container } from 'reactstrap';
+import Loading from './Loading';
 
 type LoadableType = {
   children: ReactNode;
 };
 
-const DELAY = 3000;
+const DELAY = 1000;
 
 const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
   const { children, ...rest } = props;
@@ -19,7 +20,7 @@ const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
   }, []);
 
   if (!show) {
-    return <h1>Loading...</h1>;
+    return <Loading loadingTime={DELAY} />;
   }
 
   return (
