@@ -18,7 +18,7 @@ export async function animateLogo(): Promise<void> {
         opacity: [0, 0.5],
         easing: 'easeInOutExpo',
         rotateZ: 60,
-        duration: 1000
+        duration: 500
       })
       //main circle to zoom out to normal position
       .add({
@@ -27,14 +27,14 @@ export async function animateLogo(): Promise<void> {
         opacity: [0.5, 1],
         easing: 'easeInOutExpo',
         rotateZ: 120,
-        duration: 1000
+        duration: 500
       })
       //small circle
       .add({
         targets: smallCircleSelector,
         scale: [0, 1],
         opacity: [0, 1],
-        duration: 600,
+        duration: 400,
         easing: 'easeInOutExpo',
         offset: '-=1000'
       }).finished;
