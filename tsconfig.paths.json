@@ -22,16 +22,6 @@
         "src/Utils/index.scss",
         "src/Utils/index.css"
       ],
-      "@fonts/*": ["src/Fonts/*"],
-      "@fonts": [
-        "src/Fonts/index.js",
-        "src/Fonts/index.jsx",
-        "src/Fonts/index.json",
-        "src/Fonts/index.ts",
-        "src/Fonts/index.tsx",
-        "src/Fonts/index.scss",
-        "src/Fonts/index.css"
-      ],
       "@hooks/*": ["src/Hooks/*"],
       "@hooks": [
         "src/Hooks/index.js",
@@ -51,6 +41,26 @@
         "src/Router/index.tsx",
         "src/Router/index.scss",
         "src/Router/index.css"
+      ],
+      "@assets/*": ["src/Assets/*"],
+      "@assets": [
+        "src/Assets/index.js",
+        "src/Assets/index.jsx",
+        "src/Assets/index.json",
+        "src/Assets/index.ts",
+        "src/Assets/index.tsx",
+        "src/Assets/index.scss",
+        "src/Assets/index.css"
+      ],
+      "@fonts/*": ["src/Assets/Fonts/*"],
+      "@fonts": [
+        "src/Assets/Fonts/index.js",
+        "src/Assets/Fonts/index.jsx",
+        "src/Assets/Fonts/index.json",
+        "src/Assets/Fonts/index.ts",
+        "src/Assets/Fonts/index.tsx",
+        "src/Assets/Fonts/index.scss",
+        "src/Assets/Fonts/index.css"
       ],
       "@components/*": ["src/Components/*"],
       "@components": [

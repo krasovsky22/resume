@@ -4,7 +4,7 @@ import anime from 'animejs';
 import Logo from '@/Components/Logo/AnimatedLogo';
 
 import './Home.scss';
-import '@/Fonts/ArchivoNarrow-Bold.ttf';
+import '@fonts/ArchivoNarrow-Bold.ttf';
 import { Button } from 'reactstrap';
 import EmailTo from '@/Components/Links/EmailTo';
 import AnimatedText from './AnimatedText';

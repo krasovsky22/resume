@@ -12,9 +12,10 @@ function resolveSrc(_path) {
 const aliases = {
   '@': 'src',
   '@utils': 'src/Utils',
-  '@fonts': 'src/Fonts',
   '@hooks': 'src/Hooks',
   '@router': 'src/Router',
+  '@assets': 'src/Assets',
+  '@fonts': 'src/Assets/Fonts',
   '@components': 'src/Components'
 };
 

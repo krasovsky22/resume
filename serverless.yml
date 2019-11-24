@@ -1,0 +1,8 @@
+name: resume
+website:
+  component: '@serverless/website'
+  inputs:
+    code:
+      src: build
+      hook: npm run build
+    # domain: www.serverlessmetrics.com

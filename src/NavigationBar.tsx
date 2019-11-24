@@ -33,6 +33,7 @@ class NavigationBar extends React.PureComponent<RouteComponentProps> {
             <NavItem>
               <NavLink
                 href="/"
+                disabled={path === '/'}
                 className={classnames('home-link', { active: path === '/' })}
               >
                 <Hoverable>
@@ -49,6 +50,7 @@ class NavigationBar extends React.PureComponent<RouteComponentProps> {
             <NavItem>
               <NavLink
                 href="/about"
+                disabled={path === '/about'}
                 className={classnames('about-link', {
                   active: path === '/about'
                 })}
@@ -67,6 +69,7 @@ class NavigationBar extends React.PureComponent<RouteComponentProps> {
             <NavItem>
               <NavLink
                 href="/skills"
+                disabled={path === '/skills'}
                 className={classnames('skills-link', {
                   active: path === '/skills'
                 })}
