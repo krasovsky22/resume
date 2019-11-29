@@ -16,13 +16,16 @@ class Loading extends React.PureComponent<LoadingProps, LoadingState> {
   };
 
   timerId: number = 0;
+  maxValue: number = 100;
 
   componentDidMount() {
     let initialValue = 0;
-    const tick = (10 * this.props.loadingTime) / 100;
+    const tick = (1 * this.props.loadingTime) / 100;
     this.timerId = window.setInterval(() => {
-      initialValue += 10;
-      this.setState({ loadingValue: initialValue });
+      initialValue += 1;
+      if (initialValue <= this.maxValue) {
+        this.setState({ loadingValue: initialValue });
+      }
     }, tick);
   }
 
@@ -41,7 +44,7 @@ class Loading extends React.PureComponent<LoadingProps, LoadingState> {
           <Progress
             bar
             value={loadingValue}
-            max={100}
+            max={this.maxValue}
             className="progress-bar"
           />
         </div>
