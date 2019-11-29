@@ -1,10 +1,7 @@
 import { delay } from '@/Utils/delay';
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
-import {
-  CSS3DRenderer,
-  CSS3DObject
-} from 'three/examples/jsm/renderers/CSS3DRenderer';
+import { CSS3DRenderer, CSS3DObject } from 'three-css3drenderer';
 import { TrackballControls } from 'three-trackballcontrols-ts';
 
 import skills from './skills.json';
