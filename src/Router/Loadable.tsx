@@ -36,7 +36,9 @@ const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
           <div className="tags bottom-tags mb-5 ml-5">{'</body>'}</div>
           <div className="tags bottom-tags">{'</html>'}</div>
         </div>
-        <Container className={'main-container'}>{children}</Container>
+        <Container className={'main-container'} fluid>
+          {children}
+        </Container>
       </Col>
     </>
   );
