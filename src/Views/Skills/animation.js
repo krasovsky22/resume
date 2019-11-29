@@ -1,3 +1,4 @@
+import { delay } from '@/Utils/delay';
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
 import {
@@ -6,13 +7,15 @@ import {
 } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { TrackballControls } from 'three-trackballcontrols-ts';
 
+import skills from './skills.json';
+
 export default elementRef => {
   let controls, renderer, scene, camera;
   let objects = [];
-  const objectsCount = 100;
+  const objectsCount = skills.length;
 
-  const canvasWidth = window.innerWidth / 2;
-  const canvasHeight = window.innerHeight;
+  const canvasWidth = window.innerWidth / 2 - 100;
+  const canvasHeight = window.innerHeight - 100;
 
   init();
   animate();
@@ -29,7 +32,7 @@ export default elementRef => {
       1,
       10000
     );
-    camera.position.z = 3000;
+    camera.position.z = 4000;
 
     //create renderer
     renderer = new CSS3DRenderer();
@@ -44,25 +47,47 @@ export default elementRef => {
 
     //create elements and position randomly inside the scene
     for (let i = 0; i < objectsCount; i++) {
+      const { skill, rate } = skills[i];
       const element = document.createElement('div');
       element.className = 'element';
 
-      const object = new CSS3DObject(element);
-      object.position.x =
-        Math.random() * canvasWidth - Math.random() * canvasWidth;
-      object.position.y =
-        Math.random() * canvasHeight - Math.random() * canvasHeight;
-      object.position.z =
-        Math.random() * canvasWidth - Math.random() * canvasHeight;
+      const skillText = document.createElement('div');
+      skillText.className = 'symbol';
+      skillText.textContent = skill;
+      element.appendChild(skillText);
 
-      //const vector = new THREE.Vector3();
+      const rating = document.createElement('div');
+      rating.className = 'rating';
+
+      let ratingText = '';
+      for (let num = 1; num <= rate; num++) {
+        ratingText += `<i class="fa fa-star"></i>`;
+      }
+
+      rating.innerHTML = ratingText;
+      element.appendChild(rating);
+
+      const object = new CSS3DObject(element);
+
+      object.position.x = (i % 5) * 400 - 800;
+      object.position.y = -(Math.floor(i / 5) % 5) * 400 + 800;
+      object.position.z = Math.floor(i / 25) * 1000 - 2000;
 
       scene.add(object);
       objects.push(object);
     }
 
+    window.addEventListener('resize', onWindowResize, false);
+
     //transform
     transform();
+  }
+
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / 2 / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth / 2 - 100, window.innerHeight - 100);
+    render();
   }
 
   function createSpherePosition() {
@@ -74,7 +99,7 @@ export default elementRef => {
       const theta = Math.sqrt(objectsCount * Math.PI) * phi;
 
       const d3Object = new THREE.Object3D();
-      d3Object.position.setFromSphericalCoords(800, phi, theta);
+      d3Object.position.setFromSphericalCoords(canvasWidth, phi, theta);
 
       vector.copy(d3Object.position).multiplyScalar(2);
       d3Object.lookAt(vector);
