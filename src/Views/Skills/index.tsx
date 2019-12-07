@@ -34,6 +34,11 @@ const Skills: React.FC = () => {
       </Col>
       <Col md={7}>
         <Sphere />
+        <div className="hint">
+          <small>
+            <em>Click on element.</em>
+          </small>
+        </div>
       </Col>
     </Row>
   );
