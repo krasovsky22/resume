@@ -1,5 +1,6 @@
 {
-  "name": "rain.vladkrasovski.com",
+  "name": "vladkrasovski.com",
   "region": "us-east-1",
-  "accelerated": false
+  "accelerated": false,
+  "url": "https://vladkrasovski.com.s3.amazonaws.com"
 }

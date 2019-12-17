@@ -1,4 +1,5 @@
 {
-  "bucketName": "rain.vladkrasovski.com",
-  "region": "us-east-1"
+  "bucketName": "vladkrasovski.com",
+  "region": "us-east-1",
+  "url": "http://vladkrasovski.com.s3-website-us-east-1.amazonaws.com"
 }
