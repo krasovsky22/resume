@@ -37,16 +37,11 @@ class Loading extends React.PureComponent<LoadingProps, LoadingState> {
     const { loadingValue } = this.state;
     return (
       <div className="loading-container">
-        <LogoIcon width="15%" />
+        <LogoIcon width="10em" />
         <br />
         <span>Site is loading...</span>
-        <div>
-          <Progress
-            bar
-            value={loadingValue}
-            max={this.maxValue}
-            className="progress-bar"
-          />
+        <div className="progress-loading-bar-container">
+          <Progress bar value={loadingValue} max={this.maxValue} />
         </div>
       </div>
     );

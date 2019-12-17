@@ -9,7 +9,11 @@ class EmailTo extends React.PureComponent<EmailToProps> {
     const email: string = process.env.REACT_APP_EMAIL || '';
 
     return (
-      <a href={`mailto:${email}`} className="email-link" title="Contact Me">
+      <a
+        href={`mailto:${email}`}
+        className="email-link nav-link"
+        title="Contact Me"
+      >
         {this.props.children}
       </a>
     );

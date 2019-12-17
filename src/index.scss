@@ -50,9 +50,98 @@ $tags-margin: 5%;
   bottom: $tags-margin;
 }
 
-@media (min-width: 768px) {
-  $sidebarSize: 60px;
+.b-5 {
+  bottom: 3rem;
+}
 
+$sidebarSize: 60px;
+
+.tags {
+  color: #515152;
+  position: absolute;
+  left: 2em;
+  font-size: 18px;
+  font-family: 'La Belle Aurore', cursive;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    .logo-container {
+      height: 80px;
+      padding-left: 1em;
+
+      .mobile-menu {
+        font-size: 40px;
+        color: #fff;
+        float: right;
+        margin: 10px 20px 10px 10px;
+        display: block;
+        padding-right: 1em;
+      }
+    }
+
+    //height: 10em;
+    width: 100em;
+    background: black;
+
+    .logo {
+      height: 60px;
+      width: 40px;
+      float: left;
+      padding: 6px;
+    }
+  }
+  .is-menu-opened {
+    left: 0% !important;
+  }
+
+  .nav-bar-menu {
+    left: 100%;
+    z-index: 999;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 5em;
+    width: 100%;
+    padding: 0;
+    background-color: black;
+    left: 100%;
+
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    a {
+      font-size: 22px;
+      color: #4d4d4e;
+      display: block;
+    }
+
+    .nav-item {
+      width: 25vw;
+    }
+
+    ul {
+      flex-direction: row !important;
+
+      svg {
+        min-height: 2.125em;
+        min-width: 2.125em;
+      }
+    }
+  }
+}
+
+a.active {
+  color: $logoMainColor !important;
+}
+
+.logo-text {
+  color: white;
+  font-family: sans-serif;
+}
+
+@media (min-width: 768px) {
   .sidebar {
     background: #181818;
     position: fixed;
@@ -86,10 +175,6 @@ $tags-margin: 5%;
         }
       }
 
-      a.active {
-        color: $logoMainColor;
-      }
-
       .nav-link {
         padding: 0;
       }
@@ -100,19 +185,6 @@ $tags-margin: 5%;
       display: block;
       padding: 10px 15px;
     }
-
-    .logo-text {
-      color: white;
-      font-family: sans-serif;
-    }
-  }
-
-  .tags {
-    color: #515152;
-    position: fixed;
-    left: $sidebarSize + 20;
-    font-size: 18px;
-    font-family: 'La Belle Aurore', cursive;
   }
 
   .main-container {
@@ -143,12 +215,9 @@ $tags-margin: 5%;
 
 .loading-container {
   position: absolute;
-  min-width: 300px;
-  width: 20%;
   text-align: center;
   top: 35%;
-  left: 40%;
-
+  width: 100%;
   span {
     color: #8d8d8d;
     margin-top: 9px;
@@ -159,7 +228,13 @@ $tags-margin: 5%;
     display: block;
   }
 
-  .progress-bar {
-    height: 1px;
+  .progress-loading-bar-container {
+    width: 50%;
+    margin-left: 30%;
+    margin-right: 30%;
+
+    .progress-bar {
+      height: 1px;
+    }
   }
 }

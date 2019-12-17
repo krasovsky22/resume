@@ -27,14 +27,14 @@ const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
   return (
     <>
       <NavigationBar {...rest} />
-      <Col>
-        <div className="tags">
-          <div className="tags top-tags">{'<html>'}</div>
-          <div className="tags top-tags mt-5 ml-5">{'<body>'}</div>
+      <Col className="position-relative h-100">
+        <div className="tags top-tags">
+          <div className="tags">{'<html>'}</div>
+          <div className="tags mt-5 ml-5">{'<body>'}</div>
         </div>
-        <div className="tags">
-          <div className="tags bottom-tags mb-5 ml-5">{'</body>'}</div>
-          <div className="tags bottom-tags">{'</html>'}</div>
+        <div className="tags bottom-tags">
+          <div className="tags b-5 ml-5">{'</body>'}</div>
+          <div className="tags">{'</html>'}</div>
         </div>
         <Container className={'main-container'} fluid>
           {children}
