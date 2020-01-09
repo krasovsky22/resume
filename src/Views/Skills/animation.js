@@ -11,7 +11,7 @@ export default elementRef => {
   let objects = [];
   const objectsCount = skills.length;
 
-  const canvasWidth = window.innerWidth / 2 - 100;
+  const canvasWidth = window.innerWidth / 2 + 100;
   const canvasHeight = window.innerHeight - 100;
 
   init();

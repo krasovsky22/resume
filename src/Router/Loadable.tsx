@@ -9,7 +9,7 @@ type LoadableType = {
   children: ReactNode;
 };
 
-const DELAY = parseInt(process.env.REACT_APP_LOADING_SCREEN_TIMEOUT || '1000');
+const DELAY = parseInt(process.env.REACT_APP_LOADING_SCREEN_TIMEOUT || '500');
 //const DELAY = 100000;
 
 const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
