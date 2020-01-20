@@ -134,7 +134,7 @@ class NavigationBar extends React.PureComponent<
                 </Hoverable>
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <EmailTo>
                 <Hoverable>
                   {isHovered =>
@@ -146,7 +146,7 @@ class NavigationBar extends React.PureComponent<
                   }
                 </Hoverable>
               </EmailTo>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Navbar>
       </div>

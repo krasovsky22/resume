@@ -188,7 +188,7 @@ a.active {
   }
 
   .main-container {
-    margin-left: $sidebarSize;
+    padding-left: $sidebarSize;
   }
 
   .navbar {
@@ -230,8 +230,8 @@ a.active {
 
   .progress-loading-bar-container {
     width: 50%;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: auto;
+    margin-right: auto;
 
     .progress-bar {
       height: 1px;

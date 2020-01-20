@@ -19,8 +19,8 @@ const Home: React.FC = () => {
         opacity: [0, 1],
         translateZ: 0,
         easing: 'easeOutExpo',
-        duration: 1000,
-        delay: (el, i) => 100 * (i + 1)
+        duration: 500,
+        delay: (el, i) => 75 * (i + 1)
       })
       .add({
         targets: '.main-text-zone h2, .main-text-zone .contact-me-button',
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         opacity: [0, 1],
         translateZ: 0,
         easing: 'easeOutExpo',
-        duration: 500
+        duration: 250
       });
   });
 
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         </h1>
         <h2>Full Stack Developer</h2>
         <Button className="contact-me-button">
-          <EmailTo>CONTACT ME</EmailTo>
+          <EmailTo>vlad.krasovski@yahoo.com</EmailTo>
         </Button>
       </div>
       <div className="main-logo">
