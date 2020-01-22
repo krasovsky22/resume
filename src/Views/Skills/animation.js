@@ -11,7 +11,7 @@ export default elementRef => {
   let objects = [];
   const objectsCount = skills.length;
 
-  const canvasWidth = window.innerWidth / 2 + 100;
+  const canvasWidth = window.innerWidth / 2 - 50;
   const canvasHeight = window.innerHeight - 100;
 
   init();
@@ -53,13 +53,13 @@ export default elementRef => {
       const rating = document.createElement('div');
       rating.className = 'rating';
 
-      let ratingText = '';
-      for (let num = 1; num <= rate; num++) {
-        ratingText += `<i class="fa fa-star"></i>`;
-      }
+      // let ratingText = '';
+      // for (let num = 1; num <= rate; num++) {
+      //   ratingText += `<i class="fa fa-star"></i>`;
+      // }
 
-      rating.innerHTML = ratingText;
-      element.appendChild(rating);
+      // rating.innerHTML = ratingText;
+      // element.appendChild(rating);
 
       const object = new CSS3DObject(element);
 
