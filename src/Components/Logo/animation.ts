@@ -4,8 +4,8 @@ import anime from 'animejs';
 export async function animateLogo(): Promise<void> {
   /** circles animation */
   const animateCircles = async (): Promise<void> => {
-    const bigCircleSelector: string = '.ml8 .circle-big';
-    const smallCircleSelector: string = '.ml8 .circle-small';
+    const bigCircleSelector = '.ml8 .circle-big';
+    const smallCircleSelector = '.ml8 .circle-small';
 
     await delay(4000);
 
@@ -69,10 +69,10 @@ export async function animateLogo(): Promise<void> {
         easing: 'easeInOutSine',
         opacity: [0, 1],
         duration: 2000,
-        begin: function(anim): void {
+        begin: function(): void {
           logoElement.setAttribute('stroke', 'white');
         },
-        complete: function(anim): void {
+        complete: function(): void {
           logoElement.setAttribute('stroke', 'black');
         }
       }).finished;

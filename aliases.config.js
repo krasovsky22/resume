@@ -1,3 +1,4 @@
+/*eslint-env es6*/
 // Taken from https://github.com/chrisvfritz/vue-enterprise-boilerplate/blob/master/aliases.config.js
 // Generates aliases before running webpack to set everything up nice and pretty
 const path = require('path');
@@ -12,6 +13,7 @@ function resolveSrc(_path) {
 const aliases = {
   '@': 'src',
   '@utils': 'src/Utils',
+  '@views': 'src/Views',
   '@hooks': 'src/Hooks',
   '@router': 'src/Router',
   '@assets': 'src/Assets',

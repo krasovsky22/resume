@@ -1,18 +1,18 @@
 import NavigationBar from '@/NavigationBar';
 import { delay } from '@/Utils/delay';
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { Col, Container } from 'reactstrap';
 import Loading from './Loading';
 
-type LoadableType = {
-  children: ReactNode;
+type LoadableType = RouteComponentProps & {
+  children: React.ReactChild;
 };
 
 const DELAY = parseInt(process.env.REACT_APP_LOADING_SCREEN_TIMEOUT || '250');
 //const DELAY = 100000;
 
-const Loadable: React.FC<LoadableType & RouteComponentProps> = props => {
+const Loadable: React.FC<LoadableType> = (props: LoadableType) => {
   const { children, ...rest } = props;
 
   const [show, setShow] = useState(false);

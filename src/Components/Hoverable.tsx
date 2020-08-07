@@ -13,11 +13,11 @@ class Hoverable extends React.PureComponent<HoverableProps, HoverableState> {
     isHovered: false
   };
 
-  onMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
+  onMouseEnter = () => {
     this.setState({ isHovered: true });
   };
 
-  onMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
+  onMouseLeave = () => {
     this.setState({ isHovered: false });
   };
 

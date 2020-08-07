@@ -22,6 +22,16 @@
         "src/Utils/index.scss",
         "src/Utils/index.css"
       ],
+      "@views/*": ["src/Views/*"],
+      "@views": [
+        "src/Views/index.js",
+        "src/Views/index.jsx",
+        "src/Views/index.json",
+        "src/Views/index.ts",
+        "src/Views/index.tsx",
+        "src/Views/index.scss",
+        "src/Views/index.css"
+      ],
       "@hooks/*": ["src/Hooks/*"],
       "@hooks": [
         "src/Hooks/index.js",

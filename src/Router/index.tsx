@@ -1,42 +1,36 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router';
+import { RouteProps } from 'react-router-dom';
+import { uid } from 'react-uid';
+import Loading from '@components/Loading';
 
-import Home from '@/Views/Home';
-import About from '@/Views/About';
-import Loadable from './Loadable';
-import Skills from '@/Views/Skills';
+const routes: RouteProps[] = [
+  {
+    exact: true,
+    path: '/',
+    component: lazy(() => import('../Views/Home'))
+  },
+  {
+    exact: true,
+    path: '/about',
+    component: lazy(() => import('../Views/About'))
+  },
+  {
+    exact: true,
+    path: '/skills',
+    component: lazy(() => import('../Views/Skills'))
+  }
+];
 
 const Routing: React.FC = () => {
   return (
-    <Switch>
-      <Route
-        exact
-        path="/"
-        component={(props: any) => (
-          <Loadable {...props}>
-            <Home />
-          </Loadable>
-        )}
-      ></Route>
-      <Route
-        exact
-        path="/about"
-        component={(props: any) => (
-          <Loadable {...props}>
-            <About />
-          </Loadable>
-        )}
-      />
-      <Route
-        exact
-        path="/skills"
-        component={(props: any) => (
-          <Loadable {...props}>
-            <Skills />
-          </Loadable>
-        )}
-      />
-    </Switch>
+    <Suspense fallback={<Loading />}>
+      <Switch>
+        {routes.map((route: RouteProps) => (
+          <Route key={uid(route)} {...route} />
+        ))}
+      </Switch>
+    </Suspense>
   );
 };
 

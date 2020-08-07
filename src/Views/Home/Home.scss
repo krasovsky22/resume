@@ -30,51 +30,6 @@
   }
 }
 
-.main-text-zone {
-  margin-left: 5%;
-  margin-top: 30vh;
-  max-width: 500px;
-
-  h1 {
-    font-size: 5.5vh;
-    font-weight: 700;
-
-    span {
-      opacity: 0;
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      animation-iteration-count: 100;
-      transition: all 0.3s ease-out;
-    }
-    .is-hovered {
-      color: $logoMainColor;
-      cursor: default;
-      animation-name: rubberBand;
-      display: inline-block;
-      animation-iteration-count: 1;
-    }
-  }
-
-  h2 {
-    color: #8d8d8d;
-    margin-top: 10px;
-    font-weight: 400;
-    font-size: 11px;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 3px;
-    -webkit-animation: myanim2 1s 1.8s backwards;
-    animation: myanim2 1s 1.8s backwards;
-  }
-
-  .contact-me-button {
-    background-color: transparent;
-
-    &:hover {
-      background-color: $logoMainColor;
-    }
-  }
-}
-
 .main-logo {
   position: absolute;
   right: 10%;

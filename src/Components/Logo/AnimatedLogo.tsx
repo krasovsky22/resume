@@ -1,59 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
 import { animateLogo } from './animation';
 import LogoIcon from '.';
 
 import './Logo.scss';
+import { useDidMount } from 'beautiful-react-hooks';
 
-type LogoProps = typeof Logo.defaultProps & {
-  isAnimated: boolean;
+type LogoProps = {
+  isAnimated?: boolean;
 };
 
-type LogoState = {
-  isAnimationCompleted: boolean;
-};
+const Logo: React.FC<LogoProps> = ({ isAnimated = false }: LogoProps) => {
+  const [isAnimationCompleted, setIsAnimationCompleted] = useState<boolean>(
+    false
+  );
 
-class Logo extends React.PureComponent<LogoProps, LogoState> {
-  static defaultProps = {
-    isAnimated: false
-  };
-
-  state: LogoState = {
-    isAnimationCompleted: false
-  };
-
-  async componentDidMount(): Promise<void> {
-    const { isAnimated } = this.props;
-
+  useDidMount(async () => {
     if (isAnimated) {
       await animateLogo();
-
-      this.setState({ isAnimationCompleted: true });
+      setIsAnimationCompleted(true);
     }
-  }
+  });
 
-  render() {
-    const { isAnimationCompleted } = this.state;
-
-    return (
-      <div className="ml8">
-        <span className="logo-container">
-          <span
-            className={classNames('logo', {
-              'empty-logo': !isAnimationCompleted
-            })}
-          >
-            <LogoIcon />
-          </span>
+  return (
+    <div className="ml8">
+      <span className="logo-container">
+        <span
+          className={classNames('logo', {
+            'empty-logo': !isAnimationCompleted
+          })}
+        >
+          <LogoIcon />
         </span>
-        <span className="circle circle-big"></span>
-        <span className="circle circle-container">
-          <span className="circle circle-small"></span>
-        </span>
-      </div>
-    );
-  }
-}
+      </span>
+      <span className="circle circle-big"></span>
+      <span className="circle circle-container">
+        <span className="circle circle-small"></span>
+      </span>
+    </div>
+  );
+};
 
 export default Logo;

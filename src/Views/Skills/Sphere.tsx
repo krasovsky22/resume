@@ -1,21 +1,15 @@
 import React from 'react';
+import { useDidMount } from 'beautiful-react-hooks';
 
 import './Sphere.scss';
 
 import { default as animation } from './animation';
 
-class Sphere extends React.PureComponent {
-  private containerRef = React.createRef<HTMLDivElement>();
+const Sphere: React.FC = () => {
+  const containerRef = React.createRef<HTMLDivElement>();
+  useDidMount(() => containerRef.current && animation(containerRef.current));
 
-  componentDidMount() {
-    if (this.containerRef.current) {
-      animation(this.containerRef.current);
-    }
-  }
-
-  render() {
-    return <div ref={this.containerRef} className="canvas" />;
-  }
-}
+  return <div ref={containerRef} className="canvas" />;
+};
 
 export default Sphere;

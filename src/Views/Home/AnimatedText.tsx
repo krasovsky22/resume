@@ -7,7 +7,10 @@ type AnimatedTextProps = {
   text: string;
 };
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ text }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = (
+  props: AnimatedTextProps
+) => {
+  const { text } = props;
   const words = text.split(' ');
 
   const hoverableWords = words.map(word => {
