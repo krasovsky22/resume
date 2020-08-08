@@ -1,36 +1,20 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
 type HoverableProps = {
   children: React.FC<boolean>;
 };
 
-type HoverableState = {
-  isHovered: boolean;
+const Hoverable: React.FC<HoverableProps> = ({ children }: HoverableProps) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const onMouseEnter = useCallback(() => setIsHovered(true), [setIsHovered]);
+  const onMouseLeave = useCallback(() => setIsHovered(false), [setIsHovered]);
+
+  return (
+    <div onMouseOver={onMouseEnter} onMouseOut={onMouseLeave}>
+      {children(isHovered)}
+    </div>
+  );
 };
-
-class Hoverable extends React.PureComponent<HoverableProps, HoverableState> {
-  state = {
-    isHovered: false
-  };
-
-  onMouseEnter = () => {
-    this.setState({ isHovered: true });
-  };
-
-  onMouseLeave = () => {
-    this.setState({ isHovered: false });
-  };
-
-  render() {
-    const { children } = this.props;
-    const { isHovered } = this.state;
-
-    return (
-      <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        {children(isHovered)}
-      </div>
-    );
-  }
-}
 
 export default Hoverable;
