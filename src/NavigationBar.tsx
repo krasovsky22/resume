@@ -1,17 +1,14 @@
 import Hoverable from '@components/Hoverable';
 import LogoIcon from '@components/Logo';
-import {
-  faBars,
-  faCode,
-  faGrinAlt,
-  faHome
-} from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useLifecycle } from 'beautiful-react-hooks';
 import classnames from 'classnames';
 import React, { useCallback, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
+import { uid } from 'react-uid';
 import { Nav, Navbar, NavItem, NavLink } from 'reactstrap';
+import { app_routes } from './Router/index';
 import isMobile from './Utils/isMobile';
 
 const NavigationBar: React.FC<RouteComponentProps> = (
@@ -63,75 +60,29 @@ const NavigationBar: React.FC<RouteComponentProps> = (
           'is-menu-opened': isMobileState && isMenuOpened
         })}
       >
-        <Nav vertical={true}>
-          <NavItem>
-            <NavLink
-              href="/"
-              disabled={path === '/'}
-              className={classnames('home-link', { active: path === '/' })}
-            >
-              <Hoverable>
-                {isHovered =>
-                  isHovered ? (
-                    <p className="title-text">{'Home'}</p>
-                  ) : (
-                    <FontAwesomeIcon icon={faHome} />
-                  )
-                }
-              </Hoverable>
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              href="/about"
-              disabled={path === '/about'}
-              className={classnames('about-link', {
-                active: path === '/about'
-              })}
-            >
-              <Hoverable>
-                {isHovered =>
-                  isHovered ? (
-                    <p className="title-text">{'About'}</p>
-                  ) : (
-                    <FontAwesomeIcon icon={faGrinAlt} />
-                  )
-                }
-              </Hoverable>
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              href="/skills"
-              disabled={path === '/skills'}
-              className={classnames('skills-link', {
-                active: path === '/skills'
-              })}
-            >
-              <Hoverable>
-                {isHovered =>
-                  isHovered ? (
-                    <p className="title-text">{'Skills'}</p>
-                  ) : (
-                    <FontAwesomeIcon icon={faCode} />
-                  )
-                }
-              </Hoverable>
-            </NavLink>
-          </NavItem>
-          {/* <NavItem>
-            <EmailTo>
-              <Hoverable>
-                {isHovered =>
-                  isHovered ? (
-                    <p className="title-text">{'Email'}</p>
-                  ) : (
-                    <FontAwesomeIcon icon={faEnvelope} />
-                  )
-                }
-              </Hoverable>
-            </EmailTo>
-          </NavItem> */}
+        <Nav vertical={!isMobileState} className="justify-content-around w-100">
+          {app_routes.map(route => (
+            <NavItem key={uid(route)}>
+              <NavLink
+                href={route.path}
+                title={route.title}
+                disabled={path === route.path}
+                className={classnames('home-link', {
+                  active: path === route.path
+                })}
+              >
+                <Hoverable>
+                  {isHovered =>
+                    isHovered && !isMobileState ? (
+                      <p className="title-text">{route.title}</p>
+                    ) : (
+                      <FontAwesomeIcon icon={route.icon} />
+                    )
+                  }
+                </Hoverable>
+              </NavLink>
+            </NavItem>
+          ))}
         </Nav>
       </Navbar>
     </div>

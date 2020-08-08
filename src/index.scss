@@ -117,9 +117,9 @@ $sidebarSize: 60px;
       display: block;
     }
 
-    .nav-item {
-      width: 25vw;
-    }
+    // .nav-item {
+    //   width: 25vw;
+    // }
 
     ul {
       flex-direction: row !important;
@@ -241,8 +241,6 @@ a.active {
 
 .main-text-zone {
   margin-left: 5%;
-  margin-top: 30vh;
-  max-width: 500px;
 
   h1 {
     font-size: 5.5vh;

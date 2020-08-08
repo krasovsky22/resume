@@ -1,11 +1,8 @@
 .pyramid {
   position: absolute;
-  right: 30%;
-  margin-left: 120px;
-  top: 50%;
+  left: 30%;
+  //margin-left: 120px;
   margin-top: -210px;
-  height: 500px;
-  width: 100px;
   -webkit-transform-style: preserve-3d;
   -webkit-animation: spin 10s linear infinite;
   -webkit-transform-origin: 116px 200px 116px;
