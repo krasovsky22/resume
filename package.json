@@ -86,7 +86,7 @@
     "dotenv": "^8.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "react-app-rewired": "^2.1.6"
